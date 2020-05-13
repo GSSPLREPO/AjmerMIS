@@ -1,0 +1,1271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{07187595-1D95-46D5-9110-CA2AAE15C2CD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GEA_Ajmer</RootNamespace>
+    <AssemblyName>GEA-Ajmer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Backup projects\Ajmer_MIS\GEA-Ajmer\bin\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Backup projects\Ajmer_MIS\GEA-Ajmer\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Backup projects\Ajmer_MIS\GEA-Ajmer\bin\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Backup projects\Ajmer_MIS\GEA-Ajmer\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\Backup projects\Ajmer_MIS\GEA-Ajmer\bin\Microsoft.SqlServer.TxScript.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OPCSystems">
+      <HintPath>..\..\Schneider\Schneider_MIS\Branch\Source\Schneider_MIS\bin\OPCSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="OPCSystemsBrowseComputers">
+      <HintPath>..\..\Schneider\Schneider_MIS\Branch\Source\Schneider_MIS\bin\OPCSystemsBrowseComputers.dll</HintPath>
+    </Reference>
+    <Reference Include="OPCSystemsDataConnector">
+      <HintPath>..\..\Schneider\Schneider_MIS\Branch\Source\Schneider_MIS\bin\OPCSystemsDataConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="OPCSystemsInterface">
+      <HintPath>..\..\Schneider\Schneider_MIS\Branch\Source\Schneider_MIS\bin\OPCSystemsInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Select.Pdf">
+      <HintPath>..\..\Backup projects\Ajmer_MIS\GEA-Ajmer\bin\Select.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>..\..\Backup projects\Ajmer_MIS\GEA-Ajmer\bin\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf">
+      <HintPath>..\..\Backup projects\Ajmer_MIS\GEA-Ajmer\bin\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\canvasjs.min.js" />
+    <Content Include="GEAProcess_large_20122024.jpg" />
+    <Content Include="js\bootstrap-datepicker.min.js" />
+    <Content Include="js\bootstrap-datetimepicker.min.js" />
+    <Content Include="js\bootstrap-slider.min.js" />
+    <Content Include="js\bootstrap-timepicker.min.js" />
+    <Content Include="js\canvas.js" />
+    <Content Include="js\chosen.jquery.min.js" />
+    <Content Include="js\dropzone.min.js" />
+    <Content Include="js\endless\endless.js" />
+    <Content Include="js\endless\endless_dashboard.js" />
+    <Content Include="js\endless\endless_form.js" />
+    <Content Include="js\endless\endless_wizard.js" />
+    <Content Include="js\export-data.js" />
+    <Content Include="js\exporting.js" />
+    <Content Include="js\fullcalendar.min.js" />
+    <Content Include="js\highcharts.js" />
+    <Content Include="js\jquery-1.10.2.min.js" />
+    <Content Include="js\jquery-ui-map\ui\min\jquery.ui.map.full.min.js" />
+    <Content Include="js\jquery-ui-map\ui\min\jquery.ui.map.microformat.min.js" />
+    <Content Include="js\jquery.colorbox.min.js" />
+    <Content Include="js\jquery.cookie.min.js" />
+    <Content Include="js\jquery.dataTables.min.js" />
+    <Content Include="js\jquery.flot.min.js" />
+    <Content Include="js\jquery.gritter.min.js" />
+    <Content Include="js\jquery.jcarousel.min.js" />
+    <Content Include="js\jquery.localscroll.min.js" />
+    <Content Include="js\jquery.maskedinput.min.js" />
+    <Content Include="js\jquery.nestable.min.js" />
+    <Content Include="js\jquery.popupoverlay.min.js" />
+    <Content Include="js\jquery.resize.min.js" />
+    <Content Include="js\jquery.scrollTo.min.js" />
+    <Content Include="js\jquery.slimscroll.min.js" />
+    <Content Include="js\jquery.sparkline.min.js" />
+    <Content Include="js\jquery.tagsinput.min.js" />
+    <Content Include="js\modernizr.min.js" />
+    <Content Include="js\morris.min.js" />
+    <Content Include="js\pace.min.js" />
+    <Content Include="js\parsley.min.js" />
+    <Content Include="js\rapheal.min.js" />
+    <Content Include="js\uncompressed\bootstrap-wysihtml5.js" />
+    <Content Include="js\uncompressed\holder.js" />
+    <Content Include="js\uncompressed\pace.js" />
+    <Content Include="js\uncompressed\run_prettify.js" />
+    <Content Include="js\waypoints.min.js" />
+    <Content Include="js\wysihtml5-0.3.0.min.js" />
+    <Content Include="obj\Debug\GEA-Ajmer.csproj.FileListAbsolute.txt" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\bootstrap\badges.less" />
+    <Content Include="Content\bootstrap\bootstrap.less" />
+    <Content Include="Content\bootstrap\breadcrumbs.less" />
+    <Content Include="Content\bootstrap\button-groups.less" />
+    <Content Include="Content\bootstrap\buttons.less" />
+    <Content Include="Content\bootstrap\carousel.less" />
+    <Content Include="Content\bootstrap\close.less" />
+    <Content Include="Content\bootstrap\code.less" />
+    <Content Include="Content\bootstrap\component-animations.less" />
+    <Content Include="Content\bootstrap\dropdowns.less" />
+    <Content Include="Content\bootstrap\forms.less" />
+    <Content Include="Content\bootstrap\glyphicons.less" />
+    <Content Include="Content\bootstrap\grid.less" />
+    <Content Include="Content\bootstrap\input-groups.less" />
+    <Content Include="Content\bootstrap\jumbotron.less" />
+    <Content Include="Content\bootstrap\labels.less" />
+    <Content Include="Content\bootstrap\list-group.less" />
+    <Content Include="Content\bootstrap\media.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Content\bootstrap\mixins\alerts.less" />
+    <Content Include="Content\bootstrap\mixins\background-variant.less" />
+    <Content Include="Content\bootstrap\mixins\border-radius.less" />
+    <Content Include="Content\bootstrap\mixins\buttons.less" />
+    <Content Include="Content\bootstrap\mixins\center-block.less" />
+    <Content Include="Content\bootstrap\mixins\clearfix.less" />
+    <Content Include="Content\bootstrap\mixins\forms.less" />
+    <Content Include="Content\bootstrap\mixins\gradients.less" />
+    <Content Include="Content\bootstrap\mixins\grid-framework.less" />
+    <Content Include="Content\bootstrap\mixins\grid.less" />
+    <Content Include="Content\bootstrap\mixins\hide-text.less" />
+    <Content Include="Content\bootstrap\mixins\image.less" />
+    <Content Include="Content\bootstrap\mixins\labels.less" />
+    <Content Include="Content\bootstrap\mixins\list-group.less" />
+    <Content Include="Content\bootstrap\mixins\nav-divider.less" />
+    <Content Include="Content\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="Content\bootstrap\mixins\opacity.less" />
+    <Content Include="Content\bootstrap\mixins\pagination.less" />
+    <Content Include="Content\bootstrap\mixins\panels.less" />
+    <Content Include="Content\bootstrap\mixins\progress-bar.less" />
+    <Content Include="Content\bootstrap\mixins\reset-filter.less" />
+    <Content Include="Content\bootstrap\mixins\reset-text.less" />
+    <Content Include="Content\bootstrap\mixins\resize.less" />
+    <Content Include="Content\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="Content\bootstrap\mixins\size.less" />
+    <Content Include="Content\bootstrap\mixins\tab-focus.less" />
+    <Content Include="Content\bootstrap\mixins\table-row.less" />
+    <Content Include="Content\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="Content\bootstrap\mixins\text-overflow.less" />
+    <Content Include="Content\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="Content\bootstrap\modals.less" />
+    <Content Include="Content\bootstrap\navbar.less" />
+    <Content Include="Content\bootstrap\navs.less" />
+    <Content Include="Content\bootstrap\normalize.less" />
+    <Content Include="Content\bootstrap\pager.less" />
+    <Content Include="Content\bootstrap\pagination.less" />
+    <Content Include="Content\bootstrap\panels.less" />
+    <Content Include="Content\bootstrap\popovers.less" />
+    <Content Include="Content\bootstrap\print.less" />
+    <Content Include="Content\bootstrap\progress-bars.less" />
+    <Content Include="Content\bootstrap\responsive-embed.less" />
+    <Content Include="Content\bootstrap\responsive-utilities.less" />
+    <Content Include="Content\bootstrap\scaffolding.less" />
+    <Content Include="Content\bootstrap\tables.less" />
+    <Content Include="Content\bootstrap\theme.less" />
+    <Content Include="Content\bootstrap\thumbnails.less" />
+    <Content Include="Content\bootstrap\tooltip.less" />
+    <Content Include="Content\bootstrap\type.less" />
+    <Content Include="Content\bootstrap\utilities.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\font-awesome\less\animated.less" />
+    <Content Include="fonts\font-awesome\less\bordered-pulled.less" />
+    <Content Include="fonts\font-awesome\less\core.less" />
+    <Content Include="fonts\font-awesome\less\fixed-width.less" />
+    <Content Include="fonts\font-awesome\less\font-awesome.less" />
+    <Content Include="fonts\font-awesome\less\icons.less" />
+    <Content Include="fonts\font-awesome\less\larger.less" />
+    <Content Include="fonts\font-awesome\less\list.less" />
+    <Content Include="fonts\font-awesome\less\mixins.less" />
+    <Content Include="fonts\font-awesome\less\path.less" />
+    <Content Include="fonts\font-awesome\less\rotated-flipped.less" />
+    <Content Include="fonts\font-awesome\less\screen-reader.less" />
+    <Content Include="fonts\font-awesome\less\stacked.less" />
+    <Content Include="fonts\font-awesome\less\variables.less" />
+    <Content Include="fonts\font-awesome\scss\font-awesome.scss" />
+    <Content Include="fonts\font-awesome\scss\_animated.scss" />
+    <Content Include="fonts\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\font-awesome\scss\_core.scss" />
+    <Content Include="fonts\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="fonts\font-awesome\scss\_icons.scss" />
+    <Content Include="fonts\font-awesome\scss\_larger.scss" />
+    <Content Include="fonts\font-awesome\scss\_list.scss" />
+    <Content Include="fonts\font-awesome\scss\_mixins.scss" />
+    <Content Include="fonts\font-awesome\scss\_path.scss" />
+    <Content Include="fonts\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="fonts\font-awesome\scss\_stacked.scss" />
+    <Content Include="fonts\font-awesome\scss\_variables.scss" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fonts\roboto-v15-latin-300.woff" />
+    <Content Include="fonts\fonts\roboto-v15-latin-300.woff2" />
+    <Content Include="fonts\fonts\roboto-v15-latin-500.woff" />
+    <Content Include="fonts\fonts\roboto-v15-latin-500.woff2" />
+    <Content Include="fonts\fonts\roboto-v15-latin-700.woff" />
+    <Content Include="fonts\fonts\roboto-v15-latin-700.woff2" />
+    <Content Include="fonts\fonts\roboto-v15-latin-regular.woff" />
+    <Content Include="fonts\fonts\roboto-v15-latin-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Masters\MainMaster.Master" />
+    <Content Include="output\BreakDown25-12-2015-12-55-34.docx" />
+    <Content Include="output\BreakDown25-12-2015-13-29-47.docx" />
+    <Content Include="output\BreakDown25-12-2015-13-30-10.docx" />
+    <Content Include="output\BreakDown25-12-2015-13-47-52.docx" />
+    <Content Include="output\BreakDown25-12-2015-13-48-27.docx" />
+    <Content Include="output\Evap-129-07-2017-18-26-37.pdf" />
+    <Content Include="output\Evap-129-07-2017-18-27-42.pdf" />
+    <Content Include="output\Evap-129-07-2017-18-29-06.pdf" />
+    <Content Include="output\Evap29-07-2017-17-36-06.pdf" />
+    <Content Include="output\Evap29-07-2017-17-41-58.pdf" />
+    <Content Include="output\Evap29-07-2017-18-04-40.pdf" />
+    <Content Include="output\EvapProduct29-07-2017-17-13-25.pdf" />
+    <Content Include="output\LabReport25-12-2015-18-27-47.docx" />
+    <Content Include="output\LabReport25-12-2015-18-28-03.pdf" />
+    <Content Include="output\LabReport25-12-2015-18-32-15.pdf" />
+    <Content Include="output\LabReport25-12-2015-18-33-43.pdf" />
+    <Content Include="output\Routine25-12-2015-13-34-53.docx" />
+    <Content Include="output\Routine25-12-2015-13-45-59.docx" />
+    <Content Include="output\TCIPLog25-12-2015-18-29-11.pdf" />
+    <Content Include="output\UtilityStatusReport25-12-2015-11-33-40.pdf" />
+    <Content Include="ReportUI\ChemicalConsumptionReport.aspx" />
+    <Content Include="ReportUI\DryerLogSheetReport.aspx" />
+    <Content Include="ReportUI\DryerPerformanceReport.aspx" />
+    <Content Include="ReportUI\DryerProductionLogReport.aspx" />
+    <Content Include="ReportUI\EvaporationCIPLogReport.aspx" />
+    <Content Include="ReportUI\EvaporationPlantPerformanceReport.aspx" />
+    <Content Include="ReportUI\EvaporationProductionLogReport.aspx" />
+    <Content Include="ReportUI\EvaporatorLogSheet.aspx" />
+    <Content Include="ReportUI\GEAProcess_large_20122024.jpg" />
+    <Content Include="ReportUI\MassBalanceReport.aspx" />
+    <Content Include="ReportUI\MilkStorageReport.aspx" />
+    <Content Include="ReportUI\SugarSyrupPreparationReport.aspx" />
+    <Content Include="ReportUI\SweetMilkPreparationReport.aspx" />
+    <Content Include="scripts\jquery-3.3.1.min.map" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\GEA-Ajmer.csprojAssemblyReference.cache" />
+    <Content Include="obj\Debug\GEA-Ajmer.csprojResolveAssemblyReference.cache" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\GEA-KMF30TPD.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\js\bootstrap-datepicker.min.js" />
+    <Content Include="bootstrap\js\bootstrap-timepicker.min.js" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bootstrap-timepicker.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="css\bootstrap-datetimepicker-standalone.css" />
+    <Content Include="css\bootstrap-datetimepicker.css" />
+    <Content Include="css\bootstrap-timepicker.css" />
+    <Content Include="css\bootstrap-wysihtml5.css" />
+    <Content Include="css\chosen\chosen-sprite%402x.png" />
+    <Content Include="css\chosen\chosen-sprite.png" />
+    <Content Include="css\chosen\chosen.min.css" />
+    <Content Include="css\colorbox\colorbox.css" />
+    <Content Include="css\colorbox\images\border.png" />
+    <Content Include="css\colorbox\images\controls.png" />
+    <Content Include="css\colorbox\images\loading.gif" />
+    <Content Include="css\colorbox\images\loading_background.png" />
+    <Content Include="css\colorbox\images\overlay.png" />
+    <Content Include="css\datepicker.css" />
+    <Content Include="css\dropzone\dropzone.css" />
+    <Content Include="css\dropzone\images\spritemap%402x.png" />
+    <Content Include="css\dropzone\images\spritemap.png" />
+    <Content Include="css\endless-landing.min.css" />
+    <Content Include="css\endless-skin.css" />
+    <Content Include="css\endless.css" />
+    <Content Include="css\endless.min.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\fullcalendar.css" />
+    <Content Include="css\gritter\images\gritter-light.png" />
+    <Content Include="css\gritter\images\gritter.png" />
+    <Content Include="css\gritter\images\ie-spacer.gif" />
+    <Content Include="css\gritter\jquery.gritter.css" />
+    <Content Include="css\jcarousel.responsive.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery.dataTables_themeroller.css" />
+    <Content Include="css\jquery.tagsinput.css" />
+    <Content Include="css\morris.css" />
+    <Content Include="css\pace.css" />
+    <Content Include="css\prettify.css" />
+    <Content Include="css\slider.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\adobe.PNG" />
+    <Content Include="images\banaslogo.png" />
+    <Content Include="images\banyantreelogo.gif" />
+    <Content Include="images\Delete.png" />
+    <Content Include="images\Edit.png" />
+    <Content Include="images\excel.PNG" />
+    <Content Include="images\GCMMF-297x300.jpg" />
+    <Content Include="images\GEAProcess_large_20122024.jpg" />
+    <Content Include="images\GEA_logo.png" />
+    <Content Include="images\logo.gif" />
+    <Content Include="images\Logo1.gif" />
+    <Content Include="images\Panchmrut.jpg" />
+    <Content Include="images\Panchmrut1.jpg" />
+    <Content Include="images\Status.png" />
+    <Content Include="images\word.PNG" />
+    <Content Include="img\--user.jpg" />
+    <Content Include="img\email_template\color1.png" />
+    <Content Include="img\email_template\color2.png" />
+    <Content Include="img\email_template\color3.png" />
+    <Content Include="img\email_template\color4.png" />
+    <Content Include="img\email_template\color5.png" />
+    <Content Include="img\email_template\color6.png" />
+    <Content Include="img\email_template\dribbble.png" />
+    <Content Include="img\email_template\facebook.png" />
+    <Content Include="img\email_template\google+.png" />
+    <Content Include="img\email_template\linkedin.png" />
+    <Content Include="img\email_template\logo2.png" />
+    <Content Include="img\email_template\mockup1.jpg" />
+    <Content Include="img\email_template\mockup2.jpg" />
+    <Content Include="img\email_template\mockup3.jpg" />
+    <Content Include="img\email_template\mockup5.jpg" />
+    <Content Include="img\email_template\mockup6.jpg" />
+    <Content Include="img\email_template\rss.png" />
+    <Content Include="img\email_template\twitter.png" />
+    <Content Include="img\gallery1.jpg" />
+    <Content Include="img\gallery10.jpg" />
+    <Content Include="img\gallery11.jpg" />
+    <Content Include="img\gallery12.jpg" />
+    <Content Include="img\gallery13.jpg" />
+    <Content Include="img\gallery14.jpg" />
+    <Content Include="img\gallery15.jpg" />
+    <Content Include="img\gallery2.jpg" />
+    <Content Include="img\gallery3.jpg" />
+    <Content Include="img\gallery4.jpg" />
+    <Content Include="img\gallery5.jpg" />
+    <Content Include="img\gallery6.jpg" />
+    <Content Include="img\gallery7.jpg" />
+    <Content Include="img\gallery8.jpg" />
+    <Content Include="img\gallery9.jpg" />
+    <Content Include="img\movie\preview1.jpg" />
+    <Content Include="img\movie\preview10.jpg" />
+    <Content Include="img\movie\preview11.jpg" />
+    <Content Include="img\movie\preview12.jpg" />
+    <Content Include="img\movie\preview13.jpg" />
+    <Content Include="img\movie\preview14.jpg" />
+    <Content Include="img\movie\preview15.jpg" />
+    <Content Include="img\movie\preview2.jpg" />
+    <Content Include="img\movie\preview3.jpg" />
+    <Content Include="img\movie\preview4.jpg" />
+    <Content Include="img\movie\preview5.jpg" />
+    <Content Include="img\movie\preview6.jpg" />
+    <Content Include="img\movie\preview7.jpg" />
+    <Content Include="img\movie\preview8.jpg" />
+    <Content Include="img\movie\preview9.jpg" />
+    <Content Include="img\responsive.png" />
+    <Content Include="img\screenshot.jpg" />
+    <Content Include="img\user.jpg" />
+    <Content Include="img\user2.jpg" />
+    <Content Include="img\user3.jpg" />
+    <Content Include="img\user4.jpg" />
+    <Content Include="img\user5.jpg" />
+    <Content Include="Login.aspx" />
+    <Content Include="Registration.aspx" />
+    <Content Include="ReportUI\BreakDownMaintainanceReport.aspx" />
+    <Content Include="ReportUI\CipLogReport.aspx" />
+    <Content Include="ReportUI\CPLTemperatureTrend.aspx" />
+    <Content Include="ReportUI\DispatchReport.aspx" />
+    <Content Include="ReportUI\FCIPLogReport.aspx" />
+    <Content Include="ReportUI\images\logo.gif" />
+    <Content Include="ReportUI\LabReport.aspx" />
+    <Content Include="ReportUI\logo.gif" />
+    <Content Include="ReportUI\MilkAnalysisReport.aspx" />
+    <Content Include="ReportUI\MilkReceptionReport.aspx" />
+    <Content Include="ReportUI\MilkWeighmentReport.aspx" />
+    <Content Include="ReportUI\MPLTemperatureTrend2.aspx" />
+    <Content Include="ReportUI\MPLTempratureTrend.aspx" />
+    <Content Include="ReportUI\PCIPLogReport.aspx" />
+    <Content Include="ReportUI\ProductDispatchReport.aspx" />
+    <Content Include="ReportUI\Refrigerator_ChillerWater.aspx" />
+    <Content Include="ReportUI\Refrigerator_ColdStorage.aspx" />
+    <Content Include="ReportUI\RoutineMaintainanceReport.aspx" />
+    <Content Include="ReportUI\TCIPLogReport.aspx" />
+    <Content Include="ReportUI\TotalPlantOperationLogReport.aspx" />
+    <Content Include="ReportUI\TransferReport.aspx" />
+    <Content Include="ReportUI\TrendsRepors.aspx" />
+    <Content Include="ReportUI\UtilityAirStatusReport.aspx" />
+    <Content Include="ReportUI\UtilityChilledWaterStatus.aspx" />
+    <Content Include="ReportUI\UtilityConsumptionReport.aspx" />
+    <Content Include="ReportUI\UtilityHotWaterStatusReport.aspx" />
+    <Content Include="ReportUI\UtilityRawWaterStatusDayWise.aspx" />
+    <Content Include="ReportUI\UtilityRowWaterStatus.aspx" />
+    <Content Include="ReportUI\UtilitySoftWaterDayWise.aspx" />
+    <Content Include="ReportUI\UtilitySoftWaterReport.aspx" />
+    <Content Include="ReportUI\UtilityStatusReport.aspx" />
+    <Content Include="ReportUI\WeighBridgeSummary.aspx" />
+    <Content Include="ReportUI\WeighbridgeSummaryReport.aspx" />
+    <Content Include="ReportUI\WTPData.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\bootstrap-datetimepicker.js" />
+    <Content Include="scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\calendar-blue.css" />
+    <Content Include="scripts\calendar-en.min.js" />
+    <Content Include="scripts\CommonFunction.js" />
+    <Content Include="scripts\exporting.js" />
+    <Content Include="scripts\highcharts.js" />
+    <Content Include="scripts\inputmask\inputmask\bindings\inputmask.binding.js" />
+    <Content Include="scripts\inputmask\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.js" />
+    <Content Include="scripts\inputmask\inputmask\dependencyLibs\inputmask.dependencyLib.jquery.js" />
+    <Content Include="scripts\inputmask\inputmask\dependencyLibs\inputmask.dependencyLib.js" />
+    <Content Include="scripts\inputmask\inputmask\global\document.js" />
+    <Content Include="scripts\inputmask\inputmask\global\window.js" />
+    <Content Include="scripts\inputmask\inputmask\inputmask.date.extensions.js" />
+    <Content Include="scripts\inputmask\inputmask\inputmask.extensions.js" />
+    <Content Include="scripts\inputmask\inputmask\inputmask.js" />
+    <Content Include="scripts\inputmask\inputmask\inputmask.numeric.extensions.js" />
+    <Content Include="scripts\inputmask\inputmask\jquery.inputmask.js" />
+    <Content Include="scripts\inputmask\jquery.inputmask.bundle.js" />
+    <Content Include="scripts\inputmask\min\inputmask\bindings\inputmask.binding.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\dependencyLibs\inputmask.dependencyLib.jquery.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\dependencyLibs\inputmask.dependencyLib.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\global\document.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\global\window.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\inputmask.date.extensions.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\inputmask.extensions.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\inputmask.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\inputmask.numeric.extensions.min.js" />
+    <Content Include="scripts\inputmask\min\inputmask\jquery.inputmask.min.js" />
+    <Content Include="scripts\inputmask\min\jquery.inputmask.bundle.min.js" />
+    <Content Include="WebServices\DashBoard.asmx" />
+    <Content Include="WebUI\AboutSoftware.aspx" />
+    <Content Include="WebUI\BreakDownMaintainance.aspx" />
+    <Content Include="WebUI\DashBoard.aspx" />
+    <Content Include="WebUI\Employee.aspx" />
+    <Content Include="WebUI\FaultMaster.aspx" />
+    <Content Include="WebUI\Home.aspx" />
+    <Content Include="WebUI\Lab.aspx" />
+    <Content Include="WebUI\LabReportDW.aspx" />
+    <Content Include="WebUI\LabReportSMP.aspx" />
+    <Content Include="WebUI\LabReportWMP.aspx" />
+    <Content Include="WebUI\LebReportSMP.aspx" />
+    <Content Include="WebUI\Logout.aspx" />
+    <Content Include="WebUI\MassBalance.aspx" />
+    <Content Include="WebUI\MilkAnalysis.aspx" />
+    <Content Include="WebUI\NotAuthorized.aspx" />
+    <Content Include="WebUI\PowderProduction.aspx" />
+    <Content Include="WebUI\Product.aspx" />
+    <Content Include="WebUI\ProductDispatch.aspx" />
+    <Content Include="WebUI\Program.aspx" />
+    <Content Include="WebUI\Reception.aspx" />
+    <Content Include="WebUI\Role.aspx" />
+    <Content Include="WebUI\RoleRights.aspx" />
+    <Content Include="WebUI\Routes.aspx" />
+    <Content Include="WebUI\RoutineMaintainance.aspx" />
+    <Content Include="WebUI\Shift.aspx" />
+    <Content Include="WebUI\Silo.aspx" />
+    <Content Include="WebUI\Status.aspx" />
+    <Content Include="WebUI\TempChart2.aspx" />
+    <Content Include="WebUI\TemperatureTrend.aspx" />
+    <Content Include="WebUI\Test1.aspx" />
+    <None Include="scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="scripts\jquery-3.3.1.js" />
+    <Content Include="scripts\jquery-3.3.1.min.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.js" />
+    <Content Include="scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="scripts\jquery-ui.js" />
+    <Content Include="scripts\jquery.dynDateTime.min.js" />
+    <Content Include="scripts\jquery.quicksearch.js" />
+    <Content Include="scripts\moment-with-locales.js" />
+    <Content Include="scripts\moment-with-locales.min.js" />
+    <Content Include="scripts\moment.js" />
+    <Content Include="scripts\moment.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="template\BreakDown.docx" />
+    <Content Include="template\CIPLog.docx" />
+    <Content Include="template\desktop.ini" />
+    <Content Include="template\DispatchReport.docx" />
+    <Content Include="template\EquipmentFaultCountReport.docx" />
+    <Content Include="template\EquipmentFaultSummaryReport.docx" />
+    <Content Include="template\Evap-1.docx" />
+    <Content Include="template\Evap.docx" />
+    <Content Include="template\Evap1.docx" />
+    <Content Include="template\Evap12.docx" />
+    <Content Include="template\EvapProduct.docx" />
+    <Content Include="template\LabReport.docx" />
+    <Content Include="template\MilkWeighmentReport.docx" />
+    <Content Include="template\PCIP.docx" />
+    <Content Include="template\Routine.docx" />
+    <Content Include="template\TransferReport.docx" />
+    <Content Include="template\UtilityConsumptionReport.docx" />
+    <Content Include="template\UtilityStatusReport.docx" />
+    <Content Include="template\~%24CIPLog.docx" />
+    <Content Include="template\~%24Evap1.docx" />
+    <Content Include="template\~%24Evap12.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Masters\MainMaster.Master.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\MainMaster.Master.designer.cs">
+      <DependentUpon>MainMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\BreakDownMaintainanceReport.aspx.cs">
+      <DependentUpon>BreakDownMaintainanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\BreakDownMaintainanceReport.aspx.designer.cs">
+      <DependentUpon>BreakDownMaintainanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\ChemicalConsumptionReport.aspx.cs">
+      <DependentUpon>ChemicalConsumptionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\ChemicalConsumptionReport.aspx.designer.cs">
+      <DependentUpon>ChemicalConsumptionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\CipLogReport.aspx.cs">
+      <DependentUpon>CipLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\CipLogReport.aspx.designer.cs">
+      <DependentUpon>CipLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\CPLTemperatureTrend.aspx.cs">
+      <DependentUpon>CPLTemperatureTrend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\CPLTemperatureTrend.aspx.designer.cs">
+      <DependentUpon>CPLTemperatureTrend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\DispatchReport.aspx.cs">
+      <DependentUpon>DispatchReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\DispatchReport.aspx.designer.cs">
+      <DependentUpon>DispatchReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\DryerLogSheetReport.aspx.cs">
+      <DependentUpon>DryerLogSheetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\DryerLogSheetReport.aspx.designer.cs">
+      <DependentUpon>DryerLogSheetReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\DryerPerformanceReport.aspx.cs">
+      <DependentUpon>DryerPerformanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\DryerPerformanceReport.aspx.designer.cs">
+      <DependentUpon>DryerPerformanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\DryerProductionLogReport.aspx.cs">
+      <DependentUpon>DryerProductionLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\DryerProductionLogReport.aspx.designer.cs">
+      <DependentUpon>DryerProductionLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\EvaporationCIPLogReport.aspx.cs">
+      <DependentUpon>EvaporationCIPLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\EvaporationCIPLogReport.aspx.designer.cs">
+      <DependentUpon>EvaporationCIPLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\EvaporationPlantPerformanceReport.aspx.cs">
+      <DependentUpon>EvaporationPlantPerformanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\EvaporationPlantPerformanceReport.aspx.designer.cs">
+      <DependentUpon>EvaporationPlantPerformanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\EvaporationProductionLogReport.aspx.cs">
+      <DependentUpon>EvaporationProductionLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\EvaporationProductionLogReport.aspx.designer.cs">
+      <DependentUpon>EvaporationProductionLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\EvaporatorLogSheet.aspx.cs">
+      <DependentUpon>EvaporatorLogSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\EvaporatorLogSheet.aspx.designer.cs">
+      <DependentUpon>EvaporatorLogSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\FCIPLogReport.aspx.cs">
+      <DependentUpon>FCIPLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\FCIPLogReport.aspx.designer.cs">
+      <DependentUpon>FCIPLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\LabReport.aspx.cs">
+      <DependentUpon>LabReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\LabReport.aspx.designer.cs">
+      <DependentUpon>LabReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\MassBalanceReport.aspx.cs">
+      <DependentUpon>MassBalanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\MassBalanceReport.aspx.designer.cs">
+      <DependentUpon>MassBalanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\MilkAnalysisReport.aspx.cs">
+      <DependentUpon>MilkAnalysisReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\MilkAnalysisReport.aspx.designer.cs">
+      <DependentUpon>MilkAnalysisReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\MilkReceptionReport.aspx.cs">
+      <DependentUpon>MilkReceptionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\MilkReceptionReport.aspx.designer.cs">
+      <DependentUpon>MilkReceptionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\MilkStorageReport.aspx.cs">
+      <DependentUpon>MilkStorageReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\MilkStorageReport.aspx.designer.cs">
+      <DependentUpon>MilkStorageReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\MilkWeighmentReport.aspx.cs">
+      <DependentUpon>MilkWeighmentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\MilkWeighmentReport.aspx.designer.cs">
+      <DependentUpon>MilkWeighmentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\MPLTemperatureTrend2.aspx.cs">
+      <DependentUpon>MPLTemperatureTrend2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\MPLTemperatureTrend2.aspx.designer.cs">
+      <DependentUpon>MPLTemperatureTrend2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\MPLTempratureTrend.aspx.cs">
+      <DependentUpon>MPLTempratureTrend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\MPLTempratureTrend.aspx.designer.cs">
+      <DependentUpon>MPLTempratureTrend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\PCIPLogReport.aspx.cs">
+      <DependentUpon>PCIPLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\PCIPLogReport.aspx.designer.cs">
+      <DependentUpon>PCIPLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\ProductDispatchReport.aspx.cs">
+      <DependentUpon>ProductDispatchReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\ProductDispatchReport.aspx.designer.cs">
+      <DependentUpon>ProductDispatchReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\Refrigerator_ChillerWater.aspx.cs">
+      <DependentUpon>Refrigerator_ChillerWater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\Refrigerator_ChillerWater.aspx.designer.cs">
+      <DependentUpon>Refrigerator_ChillerWater.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\Refrigerator_ColdStorage.aspx.cs">
+      <DependentUpon>Refrigerator_ColdStorage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\Refrigerator_ColdStorage.aspx.designer.cs">
+      <DependentUpon>Refrigerator_ColdStorage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\RoutineMaintainanceReport.aspx.cs">
+      <DependentUpon>RoutineMaintainanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\RoutineMaintainanceReport.aspx.designer.cs">
+      <DependentUpon>RoutineMaintainanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\SugarSyrupPreparationReport.aspx.cs">
+      <DependentUpon>SugarSyrupPreparationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\SugarSyrupPreparationReport.aspx.designer.cs">
+      <DependentUpon>SugarSyrupPreparationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\SweetMilkPreparationReport.aspx.cs">
+      <DependentUpon>SweetMilkPreparationReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\SweetMilkPreparationReport.aspx.designer.cs">
+      <DependentUpon>SweetMilkPreparationReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\TCIPLogReport.aspx.cs">
+      <DependentUpon>TCIPLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\TCIPLogReport.aspx.designer.cs">
+      <DependentUpon>TCIPLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\TotalPlantOperationLogReport.aspx.cs">
+      <DependentUpon>TotalPlantOperationLogReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\TotalPlantOperationLogReport.aspx.designer.cs">
+      <DependentUpon>TotalPlantOperationLogReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\TransferReport.aspx.cs">
+      <DependentUpon>TransferReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\TransferReport.aspx.designer.cs">
+      <DependentUpon>TransferReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\TrendsRepors.aspx.cs">
+      <DependentUpon>TrendsRepors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\TrendsRepors.aspx.designer.cs">
+      <DependentUpon>TrendsRepors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\UtilityAirStatusReport.aspx.cs">
+      <DependentUpon>UtilityAirStatusReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\UtilityAirStatusReport.aspx.designer.cs">
+      <DependentUpon>UtilityAirStatusReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\UtilityChilledWaterStatus.aspx.cs">
+      <DependentUpon>UtilityChilledWaterStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\UtilityChilledWaterStatus.aspx.designer.cs">
+      <DependentUpon>UtilityChilledWaterStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\UtilityConsumptionReport.aspx.cs">
+      <DependentUpon>UtilityConsumptionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\UtilityConsumptionReport.aspx.designer.cs">
+      <DependentUpon>UtilityConsumptionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\UtilityHotWaterStatusReport.aspx.cs">
+      <DependentUpon>UtilityHotWaterStatusReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\UtilityHotWaterStatusReport.aspx.designer.cs">
+      <DependentUpon>UtilityHotWaterStatusReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\UtilityRawWaterStatusDayWise.aspx.cs">
+      <DependentUpon>UtilityRawWaterStatusDayWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\UtilityRawWaterStatusDayWise.aspx.designer.cs">
+      <DependentUpon>UtilityRawWaterStatusDayWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\UtilityRowWaterStatus.aspx.cs">
+      <DependentUpon>UtilityRowWaterStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\UtilityRowWaterStatus.aspx.designer.cs">
+      <DependentUpon>UtilityRowWaterStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\UtilitySoftWaterDayWise.aspx.cs">
+      <DependentUpon>UtilitySoftWaterDayWise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\UtilitySoftWaterDayWise.aspx.designer.cs">
+      <DependentUpon>UtilitySoftWaterDayWise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\UtilitySoftWaterReport.aspx.cs">
+      <DependentUpon>UtilitySoftWaterReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\UtilitySoftWaterReport.aspx.designer.cs">
+      <DependentUpon>UtilitySoftWaterReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\UtilityStatusReport.aspx.cs">
+      <DependentUpon>UtilityStatusReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\UtilityStatusReport.aspx.designer.cs">
+      <DependentUpon>UtilityStatusReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\WeighBridgeSummary.aspx.cs">
+      <DependentUpon>WeighBridgeSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\WeighBridgeSummary.aspx.designer.cs">
+      <DependentUpon>WeighBridgeSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\WeighbridgeSummaryReport.aspx.cs">
+      <DependentUpon>WeighbridgeSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\WeighbridgeSummaryReport.aspx.designer.cs">
+      <DependentUpon>WeighbridgeSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUI\WTPData.aspx.cs">
+      <DependentUpon>WTPData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportUI\WTPData.aspx.designer.cs">
+      <DependentUpon>WTPData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServices\DashBoard.asmx.cs">
+      <DependentUpon>DashBoard.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebUI\AboutSoftware.aspx.cs">
+      <DependentUpon>AboutSoftware.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\AboutSoftware.aspx.designer.cs">
+      <DependentUpon>AboutSoftware.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\BreakDownMaintainance.aspx.cs">
+      <DependentUpon>BreakDownMaintainance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\BreakDownMaintainance.aspx.designer.cs">
+      <DependentUpon>BreakDownMaintainance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\DashBoard.aspx.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\DashBoard.aspx.designer.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Employee.aspx.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Employee.aspx.designer.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\FaultMaster.aspx.cs">
+      <DependentUpon>FaultMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\FaultMaster.aspx.designer.cs">
+      <DependentUpon>FaultMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Lab.aspx.cs">
+      <DependentUpon>Lab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Lab.aspx.designer.cs">
+      <DependentUpon>Lab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\LabReportDW.aspx.cs">
+      <DependentUpon>LabReportDW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\LabReportDW.aspx.designer.cs">
+      <DependentUpon>LabReportDW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\LabReportSMP.aspx.cs">
+      <DependentUpon>LabReportSMP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\LabReportSMP.aspx.designer.cs">
+      <DependentUpon>LabReportSMP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\LabReportWMP.aspx.cs">
+      <DependentUpon>LabReportWMP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\LabReportWMP.aspx.designer.cs">
+      <DependentUpon>LabReportWMP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\LebReportSMP.aspx.cs">
+      <DependentUpon>LebReportSMP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\LebReportSMP.aspx.designer.cs">
+      <DependentUpon>LebReportSMP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\MassBalance.aspx.cs">
+      <DependentUpon>MassBalance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\MassBalance.aspx.designer.cs">
+      <DependentUpon>MassBalance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\MilkAnalysis.aspx.cs">
+      <DependentUpon>MilkAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\MilkAnalysis.aspx.designer.cs">
+      <DependentUpon>MilkAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\NotAuthorized.aspx.cs">
+      <DependentUpon>NotAuthorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\NotAuthorized.aspx.designer.cs">
+      <DependentUpon>NotAuthorized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\PowderProduction.aspx.cs">
+      <DependentUpon>PowderProduction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\PowderProduction.aspx.designer.cs">
+      <DependentUpon>PowderProduction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\ProductDispatch.aspx.cs">
+      <DependentUpon>ProductDispatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\ProductDispatch.aspx.designer.cs">
+      <DependentUpon>ProductDispatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Program.aspx.cs">
+      <DependentUpon>Program.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Program.aspx.designer.cs">
+      <DependentUpon>Program.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Reception.aspx.cs">
+      <DependentUpon>Reception.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Reception.aspx.designer.cs">
+      <DependentUpon>Reception.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\RoleRights.aspx.cs">
+      <DependentUpon>RoleRights.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\RoleRights.aspx.designer.cs">
+      <DependentUpon>RoleRights.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Routes.aspx.cs">
+      <DependentUpon>Routes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Routes.aspx.designer.cs">
+      <DependentUpon>Routes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\RoutineMaintainance.aspx.cs">
+      <DependentUpon>RoutineMaintainance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\RoutineMaintainance.aspx.designer.cs">
+      <DependentUpon>RoutineMaintainance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Shift.aspx.cs">
+      <DependentUpon>Shift.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Shift.aspx.designer.cs">
+      <DependentUpon>Shift.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Silo.aspx.cs">
+      <DependentUpon>Silo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Silo.aspx.designer.cs">
+      <DependentUpon>Silo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\TempChart2.aspx.cs">
+      <DependentUpon>TempChart2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\TempChart2.aspx.designer.cs">
+      <DependentUpon>TempChart2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\TemperatureTrend.aspx.cs">
+      <DependentUpon>TemperatureTrend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\TemperatureTrend.aspx.designer.cs">
+      <DependentUpon>TemperatureTrend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUI\Test1.aspx.cs">
+      <DependentUpon>Test1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUI\Test1.aspx.designer.cs">
+      <DependentUpon>Test1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GEA-Ajmer.BL\GEA-Ajmer.BL.csproj">
+      <Project>{ecdba9ee-e5bc-4e5f-9140-37459897c158}</Project>
+      <Name>GEA-Ajmer.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GEA-Ajmer.BO\GEA-Ajmer.BO.csproj">
+      <Project>{e5d1275c-e4de-4048-9df9-8069e87a676f}</Project>
+      <Name>GEA-Ajmer.BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GEA-Ajmer.Common\GEA-Ajmer.Common.csproj">
+      <Project>{c8823efa-8333-4350-8849-dd340fa94797}</Project>
+      <Name>GEA-Ajmer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GEA-Ajmer.DataAccess\GEA-Ajmer.DataAccess.csproj">
+      <Project>{ba8c822d-3897-4855-9c51-d1c4097df06a}</Project>
+      <Name>GEA-Ajmer.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51609</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51609/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

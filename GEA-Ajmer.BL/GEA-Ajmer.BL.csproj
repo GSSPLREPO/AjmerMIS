@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECDBA9EE-E5BC-4E5F-9140-37459897C158}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GEA_Ajmer.BL</RootNamespace>
+    <AssemblyName>GEA-Ajmer.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CIPLogReportBL.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="DryerLogBL.cs" />
+    <Compile Include="DryerPerformanceBL.cs" />
+    <Compile Include="EmployeeBl.cs" />
+    <Compile Include="EquipmentFaultBl.cs" />
+    <Compile Include="EvapLogBL.cs" />
+    <Compile Include="FaultBl.cs" />
+    <Compile Include="LabReportBl.cs" />
+    <Compile Include="LabReportDWBl.cs" />
+    <Compile Include="LabReportSMPBl.cs" />
+    <Compile Include="LabReportWMPBl.cs" />
+    <Compile Include="LogBl.cs" />
+    <Compile Include="MaintainanceBL.cs" />
+    <Compile Include="MassBalanceBl.cs" />
+    <Compile Include="MilkAnalysisBL.cs" />
+    <Compile Include="MilkReceptionBL.cs" />
+    <Compile Include="MilkStorageBL.cs" />
+    <Compile Include="MilkWeighmentBl.cs" />
+    <Compile Include="PlantPerformanceBL.cs" />
+    <Compile Include="PowderProductionBl.cs" />
+    <Compile Include="ProductBl.cs" />
+    <Compile Include="ProductDispatchBl.cs" />
+    <Compile Include="ProgramBl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceptionBl.cs" />
+    <Compile Include="Reception_PLCBl.cs" />
+    <Compile Include="ReportBL.cs" />
+    <Compile Include="RoleBl.cs" />
+    <Compile Include="RoleRightsBl.cs" />
+    <Compile Include="RouteBl.cs" />
+    <Compile Include="ScreenBl.cs" />
+    <Compile Include="ShiftBl.cs" />
+    <Compile Include="SiloBl.cs" />
+    <Compile Include="StatusBL.cs" />
+    <Compile Include="SugarSyrupBL.cs" />
+    <Compile Include="TempratureTrendBL.cs" />
+    <Compile Include="TotalPlantProductionBL.cs" />
+    <Compile Include="TransferDispatchBl.cs" />
+    <Compile Include="VehicleBl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GEA-Ajmer.BO\GEA-Ajmer.BO.csproj">
+      <Project>{e5d1275c-e4de-4048-9df9-8069e87a676f}</Project>
+      <Name>GEA-Ajmer.BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GEA-Ajmer.Common\GEA-Ajmer.Common.csproj">
+      <Project>{c8823efa-8333-4350-8849-dd340fa94797}</Project>
+      <Name>GEA-Ajmer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GEA-Ajmer.DataAccess\GEA-Ajmer.DataAccess.csproj">
+      <Project>{ba8c822d-3897-4855-9c51-d1c4097df06a}</Project>
+      <Name>GEA-Ajmer.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
